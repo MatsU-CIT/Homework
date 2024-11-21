@@ -2,7 +2,7 @@
 ロボットシステム学授業用
 
 # plusコマンド
-![test](https://github.com/MatsU-CIT/Homework/actions/workflows/test.yml/badge.svg)
+
 
 ## 使い方
 ### ダウンロード
