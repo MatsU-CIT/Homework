@@ -6,9 +6,9 @@ filename = "godsmsg.txt"
 try:
 
     with open(filename, "r", encoding="utf-8") as file:
-        print(f"----------神は言っている----------")
+        print(f"--------------------神は言っている--------------------")
         content = file.read()
         print(content)
-        print("---------------と…---------------")
+        print("-------------------------と…-------------------------")
 except FileNotFoundError:
     print(f"ファイル '{filename}' が見つからず、神は困惑している…")
