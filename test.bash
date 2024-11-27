@@ -11,16 +11,16 @@ FILENAME="godsmsg.txt"
 TEST_INPUT="test_input.txt"
 
 # 仮の入力内容を準備
-echo "テスト用の神のメッセージです。" > $TEST_INPUT
+echo "神がテスト用のお告げを作成します。" > $TEST_INPUT
 
 # hwcode.py のテスト
-echo "=== hwcode.py のテストを開始します ==="
+echo "=== 神がhwcode.py のテストを開始します ==="
 echo "テスト用入力を使ってスクリプトを実行中..."
 python3 hwcode.py < $TEST_INPUT
 if [[ -f "$FILENAME" ]]; then
-    echo "ファイル '$FILENAME' が正常に作成されました。"
+    echo "ファイル '$FILENAME' が正常に作成されましたよ。"
 else
-    echo "エラー: ファイル '$FILENAME' が作成されませんでした。"
+    echo "エラー: ファイル '$FILENAME' が作成されませんでした…"
     exit 1
 fi
 
@@ -29,9 +29,9 @@ EXPECTED_OUTPUT=$(cat $TEST_INPUT)
 ACTUAL_OUTPUT=$(cat $FILENAME)
 
 if [[ "$ACTUAL_OUTPUT" == "$EXPECTED_OUTPUT" ]]; then
-    echo "hwcode.py は正しく動作しました。"
+    echo "hwcode.py は正しく動作しましたよ。"
 else
-    echo "エラー: 作成されたファイルの内容が期待値と異なります。"
+    echo "エラー: 作成されたファイルの内容が期待値と異なります…"
     echo "期待値:"
     echo "$EXPECTED_OUTPUT"
     echo "実際の値:"
@@ -40,12 +40,12 @@ else
 fi
 
 # god.py のテスト
-echo "=== god.py のテストを開始します ==="
+echo "=== 神がgod.py のテストを開始します ==="
 python3 god.py > output.log
 if grep -q "$EXPECTED_OUTPUT" output.log; then
-    echo "god.py は正しく動作しました。"
+    echo "god.py は正しく動作しましたよ。"
 else
-    echo "エラー: god.py の出力が期待値と異なります。"
+    echo "エラー: god.py の出力が期待値と異なります…"
     echo "期待値:"
     echo "$EXPECTED_OUTPUT"
     echo "実際の出力:"
@@ -54,8 +54,8 @@ else
 fi
 
 # 後処理
-echo "テストが正常に完了しました。クリーンアップ中..."
+echo "テストが正常に完了しましたよ。クリーンアップしますね…"
 rm -f $FILENAME $TEST_INPUT output.log
 
-echo "すべてのテストが成功しました！"
+echo "すべてのテストが成功しました！神のお告げに栄光あれ"
 
