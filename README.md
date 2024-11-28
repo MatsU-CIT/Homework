@@ -2,6 +2,7 @@
 23C1134_ロボットシステム学課題提出用
 
 # 課題コマンド(hwcode.py, god.py)
+[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 ![test](https://github.com/MatsU-CIT/Homework/actions/workflows/test.yml/badge.svg)
 
 
@@ -44,6 +45,6 @@ cd Homework
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
 
 - このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
-    - [ryuichiueda/my_slides robosys2024](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2024)
+    - [ryuichiueda/my_slides robosys2024](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2024)
 
   © 2024 Yusuke Matsumoto
