@@ -1,7 +1,7 @@
 # Homework
 23C1134_ロボットシステム学課題提出用
 
-# 課題コマンド(hwcode.pyとgod.py)
+# 課題コマンド(hwcode.py, god.py)
 ![test](https://github.com/MatsU-CIT/Homework/actions/workflows/test.yml/badge.svg)
 
 
