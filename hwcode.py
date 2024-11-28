@@ -3,16 +3,17 @@
 # SPDX-License-Identifier: BSD-3-Clause
 import sys
 
-filename = "godsmsg.txt"
+def main():
+    # 標準入力からの読み取り
+    input_text = sys.stdin.read().strip()
 
-with open(filename, "w", encoding="utf-8") as file:
-    print("文章を入力してください。改行も出来ます。（終了するには空行を入力）:")
+    if input_text:
+        print(f"--------------------神は言っている--------------------")
+        print(input_text)
+        print("-------------------------と…-------------------------")
+    else:
+        print("神は何も語らなかった…")
 
-    for line in sys.stdin:
-        line = line.strip()
-        if line == "":
-            break
-        file.write(line + "\n")
-
-print(f"入力された内容は '{filename}' に保存されましたよ。")
+if __name__ == "__main__":
+    main()
 
