@@ -13,5 +13,5 @@ with open(filename, "w", encoding="utf-8") as file:
             break
         file.write(line + "\n")
 
-print(f"入力された内容は '{filename}' に保存されました")
+print(f"入力された内容は '{filename}' に保存されましたよ。")
 
