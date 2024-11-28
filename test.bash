@@ -1,62 +1,33 @@
-#!/usr/bin/bash
+#!/bin/bash
 # SPDX-FileCopyrightText: 2024 Yusuke Matsumoto s23c1134bg@s.chibakoudai.jp
 # SPDX-License-Identifier: BSD-3-Clause
-#!/bin/bash
 
-# テストスクリプトのエラーハンドリングを有効化
+# スクリプト実行時にエラーが発生した場合に即終了
 set -e
-set -o pipefail
 
-# テスト用の一時ファイルを設定
-FILENAME="godsmsg.txt"
-TEST_INPUT="test_input.txt"
+# テスト対象スクリプト
+SCRIPT="hwcode"
 
-# 仮の入力内容を準備
-echo "神がテスト用のお告げを作成します。" > $TEST_INPUT
-
-# hwcode.py のテスト
-echo "=== 神がhwcode.py のテストを開始します ==="
-echo "テスト用入力を使ってスクリプトを実行中..."
-python3 hwcode.py < $TEST_INPUT
-if [[ -f "$FILENAME" ]]; then
-    echo "ファイル '$FILENAME' が正常に作成されましたよ。"
-else
-    echo "エラー: ファイル '$FILENAME' が作成されませんでした…"
+# テストケース1: 通常の1行入力
+if ! echo "こんにちは、世界！" | python3 "$SCRIPT" | grep -q "こんにちは、世界！"; then
+    echo "テストケース1: 失敗 - 1行入力の結果が期待通りではありません"
     exit 1
 fi
 
-# 作成されたファイルの内容を確認
-EXPECTED_OUTPUT=$(cat $TEST_INPUT)
-ACTUAL_OUTPUT=$(cat $FILENAME)
-
-if [[ "$ACTUAL_OUTPUT" == "$EXPECTED_OUTPUT" ]]; then
-    echo "hwcode.py は正しく動作しましたよ。"
-else
-    echo "エラー: 作成されたファイルの内容が期待値と異なります…"
-    echo "期待値:"
-    echo "$EXPECTED_OUTPUT"
-    echo "実際の値:"
-    echo "$ACTUAL_OUTPUT"
+# テストケース2: 複数行入力
+if ! echo -e "行1\n行2\n行3" | python3 "$SCRIPT" | grep -q "行1" ||
+   ! echo -e "行1\n行2\n行3" | python3 "$SCRIPT" | grep -q "行2" ||
+   ! echo -e "行1\n行2\n行3" | python3 "$SCRIPT" | grep -q "行3"; then
+    echo "テストケース2: 失敗 - 複数行入力の結果が期待通りではありません"
     exit 1
 fi
 
-# god.py のテスト
-echo "=== 神がgod.py のテストを開始します ==="
-python3 god.py > output.log
-if grep -q "$EXPECTED_OUTPUT" output.log; then
-    echo "god.py は正しく動作しましたよ。"
-else
-    echo "エラー: god.py の出力が期待値と異なります…"
-    echo "期待値:"
-    echo "$EXPECTED_OUTPUT"
-    echo "実際の出力:"
-    cat output.log
+# テストケース3: 空入力
+if ! echo "" | python3 "$SCRIPT" | grep -q "神は何も語らない… 　かの哲学者ニーチェは言った　「神は死んだ」と…"; then
+    echo "テストケース3: 失敗 - 空入力の結果が期待通りではありません"
     exit 1
 fi
 
-# 後処理
-echo "テストが正常に完了しましたよ。クリーンアップしますね…"
-rm -f $FILENAME $TEST_INPUT output.log
-
-echo "すべてのテストが成功しました！神のお告げに栄光あれ"
+# すべてのテストが成功した場合
+echo "すべてのテストが成功しました！"
 
