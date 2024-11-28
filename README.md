@@ -28,7 +28,7 @@ XXXの部分に何も入力せずに上記コマンドを実行すると、別�
 実際に試してみましょう…  
 
 - +α  
-```echo -e "XXX\nYYY\nZZZ | ./hwcode"```(XXX,YYY,ZZZに任意の文章)  
+```echo -e "XXX\nYYY\nZZZ" | ./hwcode```(XXX,YYY,ZZZに任意の文章)  
 と入力し実行すると、改行された文章を出力することも可能です。  
 
 ## 必要なソフトウェア
