@@ -3,7 +3,7 @@
 
 # 課題コマンド(hwcode)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-![test](https://github.com/MatsU-CIT/Homework/actions/workflows/test.yml/badge.svg)
+[![test](https://github.com/MatsU-CIT/Homework/actions/workflows/test.yml/badge.svg)](https://github.com/MatsU-CIT/Homework/actions/workflows/test.yml)
 
 
 ## 使い方-神のお告げ
